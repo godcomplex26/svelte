@@ -1,30 +1,33 @@
 <script>
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
-	import { Navigation, Pagination, A11y } from 'swiper';
+
+	// Import Swiper styles
 	import 'swiper/css';
-	import 'swiper/css/navigation';
-	import 'swiper/css/pagination';
-	import 'swiper/css/scrollbar';
-	export let name;
+	import "swiper/css/pagination"
+	import "swiper/css/mousewheel"
+
+	// import Swiper core and required modules
+	// import Swiper core and required modules
+	import SwiperCore, {
+	  Mousewheel,Pagination
+	} from 'swiper';
+
+	// install Swiper modules
+	SwiperCore.use([Mousewheel,Pagination]);
 	let photo1 = 'img/wedding1.jpg';
 </script>
 
 <main class="main">
-	<div class="main_image"><h2>Sungjin & Yurim</h2></div>	
-	<Swiper class="album"
-		modules={[Navigation, Pagination, A11y]}
-		spaceBetween={0}
-		slidesPerView={1}
-		pagination={{ clickable: true }}
-		on:slideChange={() => console.log('slide change')}
-		on:swiper={(e) => console.log(e.detail[0])}
-	>
-	<SwiperSlide class="photos"><img src={photo1} /></SwiperSlide>
-	<SwiperSlide class="photos"><img src={photo1} /></SwiperSlide>
-	<SwiperSlide class="photos"><img src={photo1} /></SwiperSlide>
-	<SwiperSlide class="photos"><img src={photo1} /></SwiperSlide>
-  </Swiper>
-  <div id="map"></div>
+	<Swiper direction="{'vertical'}" slidesPerView="{1}" spaceBetween="{30}" mousewheel="{true}" pagination='{{
+		  "clickable": true
+		}}' class="mySwiper">
+		<SwiperSlide><div class="main_image"><h2>Sungjin & Yurim</h2></div></SwiperSlide>
+		<SwiperSlide><p>결혼을 축하해주세요</p><a href='https://naver.com'>test</a></SwiperSlide>
+		<SwiperSlide><img class="main_image" src={photo1} /></SwiperSlide>
+		<SwiperSlide><div id="map"></div></SwiperSlide>
+		<SwiperSlide><a href='tel:01073003086'><img class='phone' src='img/phone.jpg'/></a></SwiperSlide>
+	</Swiper>
+
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = { 
