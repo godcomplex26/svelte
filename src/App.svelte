@@ -18,12 +18,27 @@
 </script>
 
 <main class="main">
-	<Swiper direction="{'vertical'}" slidesPerView="{1}" spaceBetween="{30}" mousewheel="{true}" pagination='{{
+	<Swiper calculateHeight="{true}" direction="{'vertical'}" slidesPerView="{1}" spaceBetween="{0}" mousewheel="{true}" pagination='{{
 		  "clickable": true
 		}}' class="mySwiper">
 		<SwiperSlide><div class="main_image"><h2>Sungjin & Yurim</h2></div></SwiperSlide>
 		<SwiperSlide><p>결혼을 축하해주세요</p><a href='https://naver.com'>test</a></SwiperSlide>
-		<SwiperSlide><img class="main_image" src={photo1} /></SwiperSlide>
+		<SwiperSlide>
+			<div class="grid-container">
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>  
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>  
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+			</div>
+	</SwiperSlide>
 		<SwiperSlide><div id="map"></div></SwiperSlide>
 		<SwiperSlide><a href='tel:01073003086'><img class='phone' src='img/phone.jpg'/></a></SwiperSlide>
 	</Swiper>

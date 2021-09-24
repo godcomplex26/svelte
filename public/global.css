@@ -1,12 +1,7 @@
-html, body {
-	position: relative;
-	width: 100%;
-	height: 100%;
+html {
 }
 
 body {
-	background: #eee;
-  color: #000;
   margin: 0;
   padding: 0;
 }
@@ -15,8 +10,8 @@ body {
 	background-image: url('img/SmilingLeo.gif');
 	background-size: cover;
 	background-position: center;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 }
 
 h1 {
@@ -127,28 +122,17 @@ button:focus {
 	max-height: 500px;
 }
 
-.photos {
-	width: 100%;
-	max-width: 500px;
-	height: 100%;
-	max-height: 500px;
-}
-
-.photos img {
-	width: 100%;
-	/*height: 100%;*/
-	object-position: center;
-}
-
 #map {
 	margin: 0 auto;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 50%;
 }
 
 .swiper {
   width: 100vw;
-  height: 100vh;
+  max-width: 1000px;
+  min-height: 100vh;
+	height: 100vh;
 }
 
 .swiper-slide {
@@ -181,4 +165,22 @@ button:focus {
 .phone {
 	width: 3em;
 	height: 3em;
+}
+
+/* 그리드 뷰 */
+.grid-container {
+	width: 100%;
+	height: 98%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  grid-gap: 1vw 1vw;
+  margin: 1vw;
+}
+.grid-item {
+	background-image: url('img/wedding1.jpg');
+  background-color: rgba(255, 255, 255, 0.8);
+  background-size: cover;
+	background-position: center;
+  text-align: center;
 }
