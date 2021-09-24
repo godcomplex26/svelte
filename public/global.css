@@ -1,31 +1,42 @@
-html, body {
-	position: relative;
+html {
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main_image {
+	background-image: url('img/SmilingLeo.gif');
+	background-size: cover;
+	background-position: center;
 	width: 100%;
 	height: 100%;
 }
 
-body {
-	color: #333;
-	margin: 0;
-	padding: 8px;
-	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+h1 {
+	font-family: ONE-Mobile-POP;
 }
 
-a {
-	color: rgb(0,100,200);
-	text-decoration: none;
+@font-face {
+    font-family: 'VariableFont';
+    src: url('fonts/DancingScript-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
 }
 
-a:hover {
-	text-decoration: underline;
+h2 {
+	margin: 0px auto;
+	font-size: 3em;
+	color: #fffff8;
+	font-family: VariableFont;
 }
 
-a:visited {
-	color: rgb(0,80,160);
+.main {
+	padding-top: 0px;
 }
 
-label {
+/*label {
 	display: block;
 }
 
@@ -60,4 +71,116 @@ button:not(:disabled):active {
 
 button:focus {
 	border-color: #666;
+}*/
+
+@font-face {
+    font-family: 'SF_IceLemon';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_IceLemon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ONE-Mobile-POP';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.nav_bigbar {
+	position: fixed;
+	margin: 0 auto;
+	width: 100vw;
+	height: 60px;
+	background-color: #333333;
+	z-index: 999;
+}
+
+.nav_menu {
+	position: relative;
+	width: 25vw;
+	color: #fffff8;
+	text-align: center;
+	font-size: 1.2em;
+	font-family: 'ONE-Mobile-POP';
+}
+
+.nav_container {
+	margin: auto;
+	display: flex;
+	position: relative;
+	max-width: 1000px;
+	height: 60px;
+	align-items: center;
+}
+
+.album {
+	margin: 0 auto;
+	width: 100vw;
+	max-width: 500px;
+	height: 100vw;
+	max-height: 500px;
+}
+
+#map {
+	margin: 0 auto;
+	width: 100%;
+	height: 50%;
+}
+
+.swiper {
+  width: 100vw;
+  max-width: 1000px;
+  min-height: 100vh;
+	height: 100vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.main_image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.phone {
+	width: 3em;
+	height: 3em;
+}
+
+/* 그리드 뷰 */
+.grid-container {
+	width: 100%;
+	height: 98%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  grid-gap: 1vw 1vw;
+  margin: 1vw;
+}
+.grid-item {
+	background-image: url('img/wedding1.jpg');
+  background-color: rgba(255, 255, 255, 0.8);
+  background-size: cover;
+	background-position: center;
+  text-align: center;
 }

@@ -1,18 +1,89 @@
 <script>
-	export let name;
+	import { Swiper, SwiperSlide } from 'swiper/svelte';
+
+	// Import Swiper styles
+	import 'swiper/css';
+	import "swiper/css/pagination"
+	import "swiper/css/mousewheel"
+
+	// import Swiper core and required modules
+	// import Swiper core and required modules
+	import SwiperCore, {
+	  Mousewheel,Pagination
+	} from 'swiper';
+
+	// install Swiper modules
+	SwiperCore.use([Mousewheel,Pagination]);
+	let photo1 = 'img/wedding1.jpg';
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+<main class="main">
+	<Swiper calculateHeight="{true}" direction="{'vertical'}" slidesPerView="{1}" spaceBetween="{0}" mousewheel="{true}" pagination='{{
+		  "clickable": true
+		}}' class="mySwiper">
+		<SwiperSlide><div class="main_image"><h2>Sungjin & Yurim</h2></div></SwiperSlide>
+		<SwiperSlide><p>결혼을 축하해주세요</p><a href='https://naver.com'>test</a></SwiperSlide>
+		<SwiperSlide>
+			<div class="grid-container">
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>  
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>  
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+				<div class="grid-item"></div>
+			</div>
+	</SwiperSlide>
+		<SwiperSlide><div id="map"></div></SwiperSlide>
+		<SwiperSlide><a href='tel:01073003086'><img class='phone' src='img/phone.jpg'/></a></SwiperSlide>
+	</Swiper>
+
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = { 
+		        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+		        level: 3 // 지도의 확대 레벨
+		    };
+
+		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+		var map = new kakao.maps.Map(mapContainer, mapOption);
+
+		var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+
+		// 마커를 생성합니다
+		var marker = new kakao.maps.Marker({
+		    position: markerPosition
+		});
+
+		// 마커가 지도 위에 표시되도록 설정합니다
+		marker.setMap(map);
+
+		var iwContent = '<div style="padding:5px;">예식장 <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+	    iwPosition = new kakao.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
+
+		// 인포윈도우를 생성합니다
+		var infowindow = new kakao.maps.InfoWindow({
+		    position : iwPosition, 
+		    content : iwContent 
+		});
+
+		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+		infowindow.open(map, marker);
+	</script>
 </main>
 
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
+		/*padding: 1em;*/
+		/*max-width: 240px;*/
 		margin: 0 auto;
+		/*margin-top: 60px;*/
 	}
 
 	h1 {
@@ -22,9 +93,9 @@
 		font-weight: 100;
 	}
 
-	@media (min-width: 640px) {
+	/*@media (min-width: 640px) {
 		main {
 			max-width: none;
 		}
-	}
+	}*/
 </style>
