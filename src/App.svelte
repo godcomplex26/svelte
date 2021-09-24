@@ -24,19 +24,20 @@
 		<SwiperSlide><div class="main_image"><h2>Sungjin & Yurim</h2></div></SwiperSlide>
 		<SwiperSlide><p>결혼을 축하해주세요</p><a href='https://naver.com'>test</a></SwiperSlide>
 		<SwiperSlide>
-			<div class="grid-container">
-				<div class="grid-item"></div>
-				<div class="grid-item"></div>
-				<div class="grid-item"></div>  
-				<div class="grid-item"></div>
-				<div class="grid-item"></div>
-				<div class="grid-item"></div>  
-				<div class="grid-item"></div>
-				<div class="grid-item"></div>
-				<div class="grid-item"></div>
-				<div class="grid-item"></div>
-				<div class="grid-item"></div>
-				<div class="grid-item"></div>
+			<div class="image-grid">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
+				<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="architecture">
 			</div>
 	</SwiperSlide>
 		<SwiperSlide><div id="map"></div></SwiperSlide>
