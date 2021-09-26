@@ -14,10 +14,6 @@ body {
 	height: 100%;
 }
 
-h1 {
-	font-family: ONE-Mobile-POP;
-}
-
 @font-face {
     font-family: 'VariableFont';
     src: url('fonts/DancingScript-VariableFont_wght.ttf');
@@ -26,8 +22,8 @@ h1 {
 }
 
 h2 {
-	margin: 0px auto;
-	font-size: 3em;
+	margin-top: 20vh;
+	font-size: 8vh;
 	color: #fffff8;
 	font-family: VariableFont;
 }
@@ -109,7 +105,7 @@ button:focus {
 	margin: auto;
 	display: flex;
 	position: relative;
-	max-width: 1000px;
+	max-width: 860px;
 	height: 60px;
 	align-items: center;
 }
@@ -128,14 +124,14 @@ button:focus {
 	height: 50%;
 }
 
-.swiper {
+.mySwiper {
   width: 100vw;
-  max-width: 1000px;
+  max-width: 860px;
   min-height: 100vh;
 	height: 100vh;
 }
 
-.swiper-slide {
+.main_slider {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -159,6 +155,11 @@ button:focus {
   overflow-y: scroll;
 }
 
+.swiper-slide:nth-child(3)::-webkit-scrollbar {
+	z-index: 999;
+  display: none;
+}
+
 .main_image {
   display: block;
   width: 100%;
@@ -166,37 +167,17 @@ button:focus {
   object-fit: cover;
 }
 
-.phone {
-	width: 3em;
-	height: 3em;
+
+.scroll_swiper {
+
 }
 
-/* 그리드 뷰 */
-.grid-container {
-	width: 100%;
-	height: 98%;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto;
-  grid-gap: 1vw 1vw;
-  margin: 1vw;
-}
-.grid-item {
-	background-image: url('img/wedding1.jpg');
-  background-color: rgba(255, 255, 255, 0.8);
-  background-size: cover;
-	background-position: center;
-  text-align: center;
-  transition: all 0.5s ease-in;
-}
-
-
-
+/*이미지 그리드*/
 .image-grid {
-  --gap: 2vw;
-  --num-cols: 3;
-  --row-height: 250px;
-  --column-height: 250px;
+  --gap: 1vh;
+  --num-cols: 1;
+  --row-height: 18.8vh;
+  --column-width: 30%;
 
   box-sizing: border-box;
   padding: var(--gap);
@@ -225,7 +206,72 @@ button:focus {
 /* Anything udner 1024px */
 @media screen and (max-width: 1024px) {
   .image-grid {
-    --num-cols: 2;
-    --row-height: 200px;
+    --num-cols: 1;
+    --row-height: 18.5vh;
   }
+}
+
+/* page4. 오시는길 */
+.map input {
+	display: none;
+}
+
+.map button {
+	font-family: 'ONE-Mobile-POP';
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+.copy {
+	width: 50px;
+	height: 50px;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.copy img {
+	width: 33px;
+	height: 33px;
+}
+
+.map_img {
+	width: 100%;
+	object-fit: fill;
+}
+
+
+/* page5. 축의금, 연락처 페이지 */
+/* page5. 그리드 뷰 레이아웃 */
+.grid-container {
+	width: 100%;
+	height: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-gap: 1px;
+}
+.grid-item {
+  background-color: rgba(33, 33, 33, 0.8);
+	background-position: center;
+  text-align: center;
+  transition: all 0.5s ease-in;
+}
+
+.grid-item:nth-child(1) {
+	grid-column: 1 / span 2;
+}
+
+/* page5. 아이콘 등 */
+.contact_title {
+	font-size: 20px;
+}
+
+.kakaopay {
+	width: 80px;
+	height: 33px;
+}
+
+.phone {
+	width: 33px;
+	height: 33px;
 }
