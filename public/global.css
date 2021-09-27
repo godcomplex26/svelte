@@ -151,15 +151,19 @@ button:focus {
   align-items: center;
 }
 
+.mySwiper2 {
+	height: calc(100% - 60px);
+}
+
 .swiper-slide:nth-child(3) {
   overflow-y: scroll;
 }
 
-.swiper-slide:nth-child(3)::-webkit-scrollbar {
+/*.swiper-slide:nth-child(3)::-webkit-scrollbar {
 	z-index: 999;
   display: none;
 }
-
+*/
 .main_image {
   display: block;
   width: 100%;
@@ -176,7 +180,7 @@ button:focus {
 .image-grid {
   --gap: 1vh;
   --num-cols: 1;
-  --row-height: 18.8vh;
+  --row-height: calc(18.8vh - 12px);
   --column-width: 30%;
 
   box-sizing: border-box;
