@@ -144,21 +144,24 @@ button:focus {
 }
 
 #photo_1 {
-	background-image: url('img/SmilingLeo.gif');
+	background-image: url('img/album/15.jpg');
   background-position: center;
   background-size: cover;
+  filter: grayscale(100%);
 }
 
 #photo_2 {
-	background-image: url('img/album/5.jpg');
+	background-image: url('img/album/11.jpg');
   background-position: center;
   background-size: cover;
+  filter: grayscale(100%);
 }
 
 #photo_3 {
-	background-image: url('img/album/6.jpg');
+	background-image: url('img/album/20.jpg');
   background-position: center;
   background-size: cover;
+  filter: grayscale(100%);
 }
 
 #phrases {
@@ -173,17 +176,26 @@ button:focus {
 	text-align: center;
 	align-items: center;
 	background-color: rgba(255, 212, 0, 0.1);
-	outline: 0.15rem solid rgba(255, 212, 0, 1);
-	border-radius: 12px;
+	border: 0.15rem solid rgba(255, 212, 0, 1);
+	border-radius: 15px;
 	z-index: 999;
 }
 
 .title {
 	position: absolute;
 	top: 0;
+	left: 0;
+	margin-top: 50px;
 	text-align: center;
+	width: 100%;
+	height: auto;
 	color: rgba(255, 212, 0, 1);
-	font-size: 3vh;
+	z-index: 999;
+}
+
+.title p {
+	font-family: 'BMEULJIRO';
+	font-size: 6vh;
 }
 
 .marry {
@@ -201,7 +213,7 @@ button:focus {
 .foot {
 	color: rgba(255, 212, 0, 1);
 	font-size: 1.5em;
-	line-height: 1.5em;
+	line-height: 1em;
 }
 
 .main_slider {
@@ -240,7 +252,7 @@ button:focus {
 .image-grid {
   --gap: 1vh;
   --num-cols: 1;
-  --row-height: calc(18.8vh - 12px);
+  --row-height: calc(18.8vh);
   --column-width: 30%;
 
   box-sizing: border-box;
@@ -271,7 +283,7 @@ button:focus {
 @media screen and (max-width: 1024px) {
   .image-grid {
     --num-cols: 1;
-    --row-height: 18.5vh;
+    --row-height: 18.8vh;
   }
 }
 

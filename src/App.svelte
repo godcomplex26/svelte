@@ -68,7 +68,7 @@
 		  "clickable": true,
 		}}' id="mySwiper">
 		<SwiperSlide class="first_page">
-			<h1 class="title">유림 그리고 성진</h1>
+			
 			<!-- <Swiper grabCursor="{true}" effect="{'creative'}" creativeEffect='{{
 			  "prev": {
 			    "shadow": true,
@@ -96,6 +96,9 @@
 				<SwiperSlide id="photo_2"></SwiperSlide>
 				<SwiperSlide id="photo_3"></SwiperSlide>
 			</Swiper>
+			<div class="title">
+				<p>유림 그리고 성진</p>
+			</div>
 			<div id=phrases>
 				<p class="marry">결혼합니다</p>
 				<p class="message">더 이상 싸우지 않고</p>
