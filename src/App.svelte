@@ -6,13 +6,14 @@
 	import "swiper/css/pagination"
 	import "swiper/css/mousewheel"
 	import "swiper/css/scrollbar"
+	import "swiper/css/effect-fade"
 
 	// import Swiper core and required modules
 	import SwiperCore, {
-	  Mousewheel, Pagination, Scrollbar
+	  Mousewheel, Pagination, Scrollbar, Autoplay, EffectFade, EffectCreative
 	} from 'swiper';
 	// install Swiper modules
-	SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
+	SwiperCore.use([Mousewheel, Pagination, Scrollbar, Autoplay, EffectFade, EffectCreative]);
 
 	// 주소 복사
 	import CopyClipBoard from './CopyClipBoard.svelte';
@@ -29,10 +30,9 @@
 
 	const pagination = {
 	  "clickable": true,
-	  "dynamicBullets": true,
 	  "renderBullet": function (index, className) {
 
-	          return '<span class=\"' + className + '\"></span>';
+	          return '<span class=\"' + className + '\"><p>' + (index + 1) + '</p></span>';
 
 	        }
 	}
@@ -40,29 +40,77 @@
 
 <main class="main">
 	<style type="text/css">
-		.swiper-pagination-bullet {
-		  width: 12px;
-		  height: 12px;
-		  text-align: center;
-		  line-height: 20px;
-		  font-size: 6px;
-		  color: #000;
-		  opacity: 1;
-		  background: rgba(50, 50, 50, 0.2);
+		#photo_album .swiper-pagination-bullet {
+			margin-left: 10px;
+			margin-right: 10px;
+			width: 28px;
+			height: 28px;
+			text-align: center;
+			line-height: 20px;
+			font-size: 24px;
+			color: #000;
+			opacity: 1;
+			background: rgba(50, 50, 50, 0.2);
 		}
 
-		.swiper-pagination-bullet-active {
+		#photo_album .swiper-pagination-bullet-active {
 		  color: #000;
-		  background: #ffd400;
+		  background: rgba(255, 212, 0, 0.9);
+		}
+
+		#photo_album p {
+			font-family: 'ONE-Mobile-POP';
+			margin-top: 5px;
+			color: #fff;
 		}
 	</style>
 	<Swiper direction="{'vertical'}" slidesPerView="{'auto'}" spaceBetween="{0}" freeMode="{true}" mousewheel="{true}" pagination='{{
 		  "clickable": true,
-		}}' class="mySwiper">
-		<SwiperSlide class="main_slider"><div class="main_image"><h2>Sungjin & Yurim</h2></div></SwiperSlide>
-		<SwiperSlide class="main_slider"><p>결혼을 축하해주세요</p><a href='https://naver.com'>test</a></SwiperSlide>
+		}}' id="mySwiper">
+		<SwiperSlide class="first_page">
+			<h1 class="title">유림 그리고 성진</h1>
+			<!-- <Swiper grabCursor="{true}" effect="{'creative'}" creativeEffect='{{
+			  "prev": {
+			    "shadow": true,
+			    "translate": [
+			      0,
+			      0,
+			      -400
+			    ]
+			  },
+			  "next": {
+			    "translate": [
+			      "100%",
+			      0,
+			      0
+			    ]
+			  }
+			}}' id="main_swiper"> -->
+			<Swiper spaceBetween="{30}" effect="{'fade'}" navigation="{true}" pagination='{{
+			  "clickable": true
+			}}' autoplay='{{
+				  "delay": 2500,
+				  "disableOnInteraction": false
+				}}' id="main_swiper" name="main_swiper">
+				<SwiperSlide id="photo_1"></SwiperSlide>
+				<SwiperSlide id="photo_2"></SwiperSlide>
+				<SwiperSlide id="photo_3"></SwiperSlide>
+			</Swiper>
+			<div id=phrases>
+				<p class="marry">결혼합니다</p>
+				<p class="message">더 이상 싸우지 않고</p>
+				<p class="message">잘 지낼 수 있도록</p>
+				<p class="message">많은 관심과 사랑 부탁드립니다.</p>
+				<p class="foot">2021.11.14 14:20</p>
+				<p class="foot">더 베네치아</p>
+				<p class="foot">잠실</p>
+			</div>
+		</SwiperSlide>
 		<SwiperSlide>
-			<Swiper class="mySwiper2 swiper-v" preloadImages="{true}" lazy="{true}" slidesPerView="{3}" spaceBetween="{-6}" pagination='{pagination}'>
+			<Swiper id="photo_album" name="photo_album" class="mySwiper2 swiper-v" preloadImages="{true}" lazy="{true}" slidesPerView="{3}" spaceBetween="{-6}" pagination='{pagination}' autoplay='{{
+				  "delay": 2500,
+				  "disableOnInteraction": false
+				}}'>
 				<SwiperSlide>
 					<div class="image-grid">
 						<img src="img/album/1.jpg" alt="" class="swiper-lazy">
@@ -120,7 +168,7 @@
 			</Swiper>
 		</SwiperSlide>
 		<SwiperSlide id="map_page" class="map">
-			<img class="map_img" src="img/map.jpg" />
+			<img class="map_img" src="img/map.png" />
 			<p>주소: {name}</p>
 			<input bind:value={name}>
 			<button class="btn btn-primary" on:click={copy}>주소복사하기</button>
