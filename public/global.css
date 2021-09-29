@@ -6,20 +6,24 @@ body {
   padding: 0;
 }
 
-.main_image {
+.main {
+	padding-top: 0px;
+}
+
+/*.main_image {
 	background-image: url('img/SmilingLeo.gif');
 	background-size: cover;
 	background-position: center;
 	width: 100%;
 	height: 100%;
-}
+}*/
 
-@font-face {
+/*@font-face {
     font-family: 'VariableFont';
     src: url('fonts/DancingScript-VariableFont_wght.ttf');
     font-weight: normal;
     font-style: normal;
-}
+}*/
 
 /*h2 {
 	margin-top: 20vh;
@@ -27,10 +31,6 @@ body {
 	color: #fffff8;
 	font-family: VariableFont;
 }*/
-
-.main {
-	padding-top: 0px;
-}
 
 /*label {
 	display: block;
@@ -70,13 +70,6 @@ button:focus {
 }*/
 
 @font-face {
-    font-family: 'SF_IceLemon';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_IceLemon.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'ONE-Mobile-POP';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
     font-weight: normal;
@@ -84,13 +77,16 @@ button:focus {
 }
 
 @font-face {
-    font-family: 'BMEULJIRO';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BMEULJIRO.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'MN';
+    src: url('fonts/MN.TTF');
 }
 
-.nav_bigbar {
+@font-face {
+    font-family: 'MAPOFLOWERISLAND';
+    src: url('fonts/MAPOFLOWERISLAND.TTF');
+}
+
+/*.nav_bigbar {
 	position: fixed;
 	margin: 0 auto;
 	width: 100vw;
@@ -115,25 +111,11 @@ button:focus {
 	max-width: 860px;
 	height: 60px;
 	align-items: center;
-}
-
-.album {
-	margin: 0 auto;
-	width: 100vw;
-	max-width: 500px;
-	height: 100vw;
-	max-height: 500px;
-}
-
-#map {
-	margin: 0 auto;
-	width: 100%;
-	height: 50%;
-}
+}*/
 
 #mySwiper {
   width: 100vw;
-  max-width: 860px;
+  max-width: 780px;
   min-height: 100vh;
 	height: 100vh;
 }
@@ -143,6 +125,26 @@ button:focus {
 	height: 100%;
 }
 
+.slide_container {
+	width: 100%;
+	height: 100%;
+}
+
+.title_space {
+	width: 100%;
+	height: 60px;
+	display: table; 
+}
+
+.title_space p {
+	text-align:center; 
+  vertical-align: middle;
+  display: table-cell;
+  font-family: 'MN';
+  font-size: 30px;
+}
+
+/* 첫페이지 시작 */
 #photo_1 {
 	background-image: url('img/album/15.jpg');
   background-position: center;
@@ -165,7 +167,7 @@ button:focus {
 }
 
 #phrases {
-	font-family: 'BMEULJIRO';
+	font-family: 'MN';
 	font-size: 2vh;
 	position: absolute;
 	width: 90%;
@@ -175,7 +177,7 @@ button:focus {
 	left: 5%;
 	text-align: center;
 	align-items: center;
-	background-color: rgba(255, 212, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.4);
 	border: 0.15rem solid rgba(255, 212, 0, 1);
 	border-radius: 15px;
 	z-index: 999;
@@ -194,27 +196,43 @@ button:focus {
 }
 
 .title p {
-	font-family: 'BMEULJIRO';
-	font-size: 6vh;
+	font-family: 'MN';
+	font-size: 4.5vh;
 }
 
 .marry {
 	color: rgba(255, 212, 0, 1);
-	font-size: 2em;
-	line-height: 2em;
+	font-size: 2.4em;
+	line-height: 1.5em;
+	margin-top: 0em;
+	margin-bottom: 0.6em;
+	font-weight: 900;
 }
 
 .message {
 	color: rgba(255, 212, 0, 1);
 	font-size: 1em;
-	line-height: 1em;
+	line-height: 0.8em;
 }
 
 .foot {
 	color: rgba(255, 212, 0, 1);
-	font-size: 1.5em;
+	font-size: 1.6em;
 	line-height: 1em;
+	margin: 0.5em;
 }
+
+.foot_number {
+	font-family: 'MAPOFLOWERISLAND';
+	color: rgba(255, 212, 0, 1);
+	font-size: 1.6em;
+	line-height: 1em;
+	margin-top: 1.2em;
+	margin-bottom: 0.7em;
+	font-weight: bold;
+}
+
+/* 첫페이지 끝 */
 
 .main_slider {
   text-align: center;
@@ -243,17 +261,11 @@ button:focus {
   object-fit: cover;
 }
 
-
-.scroll_swiper {
-
-}
-
 /*이미지 그리드*/
 .image-grid {
   --gap: 1vh;
   --num-cols: 1;
-  --row-height: calc(18.8vh);
-  --column-width: 30%;
+  --row-height: calc(18.8vh - 12px);
 
   box-sizing: border-box;
   padding: var(--gap);
@@ -283,16 +295,16 @@ button:focus {
 @media screen and (max-width: 1024px) {
   .image-grid {
     --num-cols: 1;
-    --row-height: 18.8vh;
+    --row-height: calc(18.8vh - 12px);
   }
 }
 
 /* page4. 오시는길 */
-.map input {
+#map input {
 	display: none;
 }
 
-.map button {
+#map button {
 	font-family: 'ONE-Mobile-POP';
 	margin: 0 auto;
 	padding: 0 auto;
@@ -312,7 +324,7 @@ button:focus {
 
 .map_img {
 	width: 100%;
-	height: 100%;
+	height: calc(100% - 60px);
 	object-fit: fill;
 }
 
@@ -323,15 +335,19 @@ button:focus {
 	width: 100%;
 	height: 100%;
   display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto;
+  grid-template-columns: 49% 49%;
+  grid-template-rows: 40% 30% 30% 30% 30%;
   grid-gap: 1px;
+ 	background-color: darkorange;
 }
 .grid-item {
-  background-color: rgba(33, 33, 33, 0.8);
 	background-position: center;
   text-align: center;
+  align-items: center;
   transition: all 0.5s ease-in;
+  font-family: 'MN';
+  background-color: white;
+  border: 1px solid #000;
 }
 
 .grid-item:nth-child(1) {
@@ -345,7 +361,9 @@ button:focus {
 
 .kakaopay {
 	width: 80px;
-	height: 33px;
+	height: 34px;
+	/*background-color: rgba(255, 212, 0, 1);
+	border-radius: 16px*/
 }
 
 .phone {
