@@ -1,5 +1,6 @@
 <script>
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
+	import { SvelteToast } from '@zerodevx/svelte-toast'
 
 	// Import Swiper styles
 	import 'swiper/css';
@@ -18,13 +19,25 @@
 	// 주소 복사
 	import CopyClipBoard from './CopyClipBoard.svelte';
 
-	let address = '서울특별시 송파구 올림픽로35다길 42 루터회관 3층 더베네치아';
+	import Toasts from "./Toasts.svelte";
+	import { addToast } from "./store";
 
-	const copy = () => {
+	let message = "Hello, World!";
+	let types = ["success", "error", "info"];
+	let type = "success";
+	let dismissible = true;
+	let timeout = 1200;
+
+	let address = '';
+	let e = 'clipboard';
+
+	const copy = (v, message) => {
+		address = document.getElementById(v).value;
 		const app = new CopyClipBoard({
-			target: document.getElementById('clipboard'),
+			target: document.getElementById(e),
 			props: { address },
 		});
+		addToast({ message, type, dismissible, timeout })
 		app.$destroy();
 	}
 
@@ -69,9 +82,28 @@
 		  background: rgba(255, 212, 0, 0.9);
 		}
 	</style>
-	<Swiper direction="{'vertical'}" slidesPerView="{'auto'}" spaceBetween="{0}" freeMode="{true}" mousewheel="{true}" pagination='{{
+	<Toasts />
+	<input id="copy_value" bind:value={address}>
+	<div id="clipboard"></div>
+	<input id='account1' class='acc' value="KB 91028884504">
+	<input id='account2' class='acc' value="SC제일 38520100690">
+	<input id='account3' class='acc' value="농협 725064-52-008793">
+	<input id='account4' class='acc' value="대구은행 078-10-000262">
+	<input id='account5' class='acc' value="SC제일 38520100690">
+	<Swiper calculateHeight="{true}" direction="{'vertical'}" slidesPerView="{'auto'}" spaceBetween="{0}" freeMode="{true}" mousewheel="{true}" pagination='{{
 		  "clickable": true,
 		}}' id="mySwiper">
+		<!-- <SwiperSlide>
+			    <button on:click={() => addToast({ message:'주소가 복사 되었습니다.', type, dismissible, timeout })}>
+			      Add toast
+			    </button>
+			    <div>
+					
+					<input id="input_test" value="서울특별시 송파구 올림픽로35다길 42 루터회관 3층 더베네치아">
+					<button id="copy_address" class="btn btn-primary" on:click={ () => copy('input_test', '주소가 복사 되었습니다.') }>주소복사하기</button>
+					<div id="clipboard"></div>
+				</div>
+		</SwiperSlide> -->
 		<SwiperSlide class="first_page">
 			
 			<!-- <Swiper grabCursor="{true}" effect="{'creative'}" creativeEffect='{{
@@ -115,7 +147,7 @@
 		<SwiperSlide class="slide_with_title">
 			<div class="slide_container">
 				<div class="title_space"><p>역사의 순간들</p></div>
-				<Swiper id="photo_album" name="photo_album" class="mySwiper2 swiper-v" preloadImages="{true}" lazy="{true}" speed="{2000}" slidesPerView="{3}" spaceBetween="{-6}" pagination='{pagination}' autoplay='{{
+				<Swiper id="photo_album" name="photo_album" class="mySwiper2 swiper-v" speed="{2000}" slidesPerView="{3}" spaceBetween="{-6}" pagination='{pagination}' autoplay='{{
 					  "delay": 3000,
 					  "disableOnInteraction": false
 					}}'>
@@ -195,10 +227,12 @@
 						<button class="btn btn-success">네이버지도</button>
 					</a></div>
 					<div>
-						<input bind:value={address}>
-						<button class="btn btn-primary" on:click={copy}>주소복사하기</button>
-						<div id="clipboard"></div>
+						<input id="ad" value="서울특별시 송파구 올림픽로35다길 42 루터회관 3층 더베네치아">
+						<button class="btn btn-primary" on:click={ () => copy('ad', '주소가 복사 되었습니다.') }>주소복사하기</button>
 					</div>
+					<!-- <div>
+						<button on:click={() => addToast()}>EMIT TOAST</button>
+					</div> -->
 				</div>
 			</div>
 		</SwiperSlide>
@@ -216,14 +250,14 @@
 						<div id="cross_border1"></div>
 						<div class="rows"><h1>신랑</h1></div>
 						<div class="rows"><p class="name">김성진</p></div>
-						<div class="rows"><p class="bank">KB 91028884504</p></div>
+						<div class="rows"><button on:click={ () => copy('account1', '계좌번호가 복사 되었습니다.') }><p class="bank">KB 91028884504</p></button></div>
 						<div class="rows"><a href='https://qr.kakaopay.com/281006011171148890009784'><img class='kakaopay' src='img/카카오페이_CI_combination_with_BG.svg' /></a></div>
 					</div>
 					<div class='grid-item'>
 						<div id="cross_border2"></div>
 						<div class="rows"><h1>신부</h1></div>
 						<div class="rows"><p class="name">김유림</p></div>
-						<div class="rows"><p class="bank">SC제일 38520100690</p></div>
+						<div class="rows"><button on:click={ () => copy('account2', '계좌번호가 복사 되었습니다.') }><p class="bank">SC제일 38520100690</p></button></div>
 						<div class="rows"><a href='https://qr.kakaopay.com/281006011000071963774752'><img class='kakaopay' src='img/카카오페이_CI_combination_with_BG.svg' /></a></div>
 					</div>
 					<div class='grid-item'>
@@ -231,23 +265,36 @@
 						<div id="cross_border3"></div>
 						<div class="rows"><h1>신랑측 혼주</h1></div>
 						<div class="rows"><p class="name">김종훈</p></div>
-						<div class="rows"><p class="bank">농협 725064-52-008793</p></div>
+						<div class="rows"><button on:click={ () => copy('account3', '계좌번호가 복사 되었습니다.') }><p class="bank">농협 725064-52-008793</p></button></div>
 						<div class="rows"><p class="name">최명순</p></div>
-						<div class="rows"><p class="bank">대구은행 078-10-000262</p></div>
+						<div class="rows"><button on:click={ () => copy('account4', '계좌번호가 복사 되었습니다.') }><p class="bank">대구은행 078-10-000262</p></button></div>
 					</div>
 					<div class='grid-item'>
 						<!-- <a href='tel:01073003086'><img class='phone' src='img/phone.jpg'/></a> -->
 						<div id="cross_border4"></div>
 						<div class="rows"><h1>신부측 혼주</h1></div>
 						<div class="rows"><p class="name">김용수</p></div>
-						<div class="rows"><p class="bank">SC제일 38520100690</p></div>
-						<div class="rows"><p>(김유림)</p></div>
-						<div class="rows"><p class="bank">&nbsp;</p></div>
+						<div class="rows"><button on:click={ () => copy('account5', '계좌번호가 복사 되었습니다.') }><p class="bank">SC제일 38520100690</p></button></div>
+						<div class="rows"><p class="name">(김유림)</p></div>
+						<div class="rows"><button><p class="bank">&nbsp;</p></button></div>
 					</div>
 				</div>
 			</div>
 		</SwiperSlide>
 	</Swiper>
+	<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+	  <div class="toast-header">
+	    <img src="..." class="rounded mr-2" alt="...">
+	    <strong class="mr-auto">Bootstrap</strong>
+	    <small>11 mins ago</small>
+	    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+	      <span aria-hidden="true">&times;</span>
+	    </button>
+	  </div>
+	  <div class="toast-body">
+	    Hello, world! This is a toast message.
+	  </div>
+	</div>
 
 	<!-- <script>
 
@@ -288,7 +335,7 @@
 	main {
 		text-align: center;
 		/*padding: 1em;*/
-		/*max-width: 240px;*/
+		max-width: 780px;
 		margin: 0 auto;
 		/*margin-top: 60px;*/
 	}

@@ -146,19 +146,19 @@ button:focus {
 
 /* 첫페이지 시작 */
 #photo_1 {
-	background-image: url('img/album/main/1.jpg');
+	background-image: url('img/album/main/1-1.jpg');
   background-position: center;
   background-size: cover;
 }
 
 #photo_2 {
-	background-image: url('img/album/main/2.jpg');
+	background-image: url('img/album/main/2-1.jpg');
   background-position: center;
   background-size: cover;
 }
 
 #photo_3 {
-	background-image: url('img/album/main/3.jpg');
+	background-image: url('img/album/main/3-1.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -297,9 +297,6 @@ button:focus {
 }
 
 /* page4. 오시는길 */
-#map input {
-	display: none;
-}
 
 #map button {
 	font-family: 'ONE-Mobile-POP';
@@ -381,7 +378,18 @@ button:focus {
 }
 
 .rows h1 {
-	/*font-size: 1.4em;*/
+	font-size: 1.4em;
+}
+
+.rows button {
+	border: none;
+  background: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.rows button:nth-child(6) {
+	cursor: none;
 }
 
 .grid-item:nth-child(1) {
@@ -452,7 +460,7 @@ button:focus {
 }
 
 .bank {
-	font-size: 0.7em;
+	font-size: 0.6em;
 	vertical-align: top!important;
 }
 
@@ -460,6 +468,21 @@ button:focus {
 	vertical-align: bottom!important;
 }
 
-.sorry {
-	height: 18%;
+.toast {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 999;
+}
+
+#copy_value {
+	display: none;
+}
+
+#ad {
+	display: none;
+}
+
+.acc {
+	display: none;
 }
