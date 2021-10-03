@@ -1,13 +1,12 @@
 <script>
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
-	import { SvelteToast } from '@zerodevx/svelte-toast'
 
 	// Import Swiper styles
 	import 'swiper/css';
-	import "swiper/css/pagination"
-	import "swiper/css/mousewheel"
-	import "swiper/css/scrollbar"
-	import "swiper/css/effect-fade"
+	import "swiper/css/pagination";
+	import "swiper/css/mousewheel";
+	import "swiper/css/scrollbar";
+	import "swiper/css/effect-fade";
 
 	// import Swiper core and required modules
 	import SwiperCore, {
