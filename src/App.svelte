@@ -152,65 +152,65 @@
 					}}'>
 					<SwiperSlide>
 						<div class="image-grid">
-							<img src="img/album/1-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/2-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/3-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/4-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/5-s.jpg" alt="" class="swiper-lazy">
+							<img src="img/album/1.png" alt="" class="swiper-lazy">
+							<img src="img/album/2.png" alt="" class="swiper-lazy">
+							<img src="img/album/3.png" alt="" class="swiper-lazy">
+							<img src="img/album/4.png" alt="" class="swiper-lazy">
+							<img src="img/album/5.png" alt="" class="swiper-lazy">
 						</div>
 					</SwiperSlide>
 					<SwiperSlide>
 						<div class="image-grid">
-							<img src="img/album/6-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/7-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/8-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/9-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/10-s.jpg" alt="" class="swiper-lazy">
+							<img src="img/album/6.png" alt="" class="swiper-lazy">
+							<img src="img/album/7.png" alt="" class="swiper-lazy">
+							<img src="img/album/8.png" alt="" class="swiper-lazy">
+							<img src="img/album/9.png" alt="" class="swiper-lazy">
+							<img src="img/album/10.png" alt="" class="swiper-lazy">
 						</div>
 					</SwiperSlide>
 					<SwiperSlide>
 						<div class="image-grid">
-							<img src="img/album/11-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/12-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/13-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/14-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/15-s.jpg" alt="" class="swiper-lazy">
+							<img src="img/album/11.png" alt="" class="swiper-lazy">
+							<img src="img/album/12.png" alt="" class="swiper-lazy">
+							<img src="img/album/13.png" alt="" class="swiper-lazy">
+							<img src="img/album/14.png" alt="" class="swiper-lazy">
+							<img src="img/album/15.png" alt="" class="swiper-lazy">
 						</div>
 					</SwiperSlide>
 					<SwiperSlide>
 						<div class="image-grid">
-							<img src="img/album/16-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/17-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/18-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/19-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/20-s.jpg" alt="" class="swiper-lazy">
+							<img src="img/album/16.png" alt="" class="swiper-lazy">
+							<img src="img/album/17.png" alt="" class="swiper-lazy">
+							<img src="img/album/18.png" alt="" class="swiper-lazy">
+							<img src="img/album/19.png" alt="" class="swiper-lazy">
+							<img src="img/album/20.png" alt="" class="swiper-lazy">
 						</div>
 					</SwiperSlide>
 					<SwiperSlide>
 						<div class="image-grid">
-							<img src="img/album/21-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/22-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/23-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/24-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/25-s.jpg" alt="" class="swiper-lazy">
+							<img src="img/album/21.png" alt="" class="swiper-lazy">
+							<img src="img/album/22.png" alt="" class="swiper-lazy">
+							<img src="img/album/23.png" alt="" class="swiper-lazy">
+							<img src="img/album/24.png" alt="" class="swiper-lazy">
+							<img src="img/album/25.png" alt="" class="swiper-lazy">
 						</div>
 					</SwiperSlide>
 					<SwiperSlide>
 						<div class="image-grid">
-							<img src="img/album/26-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/27-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/28-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/29-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/30-s.jpg" alt="" class="swiper-lazy">
+							<img src="img/album/26.png" alt="" class="swiper-lazy">
+							<img src="img/album/27.png" alt="" class="swiper-lazy">
+							<img src="img/album/28.png" alt="" class="swiper-lazy">
+							<img src="img/album/29.png" alt="" class="swiper-lazy">
+							<img src="img/album/30.png" alt="" class="swiper-lazy">
 						</div>
 					</SwiperSlide>
 					<SwiperSlide>
 						<div class="image-grid">
-							<img src="img/album/31-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/32-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/33-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/34-s.jpg" alt="" class="swiper-lazy">
-							<img src="img/album/35-s.jpg" alt="" class="swiper-lazy">
+							<img src="img/album/31.png" alt="" class="swiper-lazy">
+							<img src="img/album/32.png" alt="" class="swiper-lazy">
+							<img src="img/album/33.png" alt="" class="swiper-lazy">
+							<img src="img/album/34.png" alt="" class="swiper-lazy">
+							<img src="img/album/35.png" alt="" class="swiper-lazy">
 						</div>
 					</SwiperSlide>
 				</Swiper>
