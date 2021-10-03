@@ -18,12 +18,12 @@
 	// 주소 복사
 	import CopyClipBoard from './CopyClipBoard.svelte';
 
-	let name = '대구 북구 복현로';
+	let address = '서울특별시 송파구 올림픽로35다길 42 루터회관 3층 더베네치아';
 
 	const copy = () => {
 		const app = new CopyClipBoard({
 			target: document.getElementById('clipboard'),
-			props: { name },
+			props: { address },
 		});
 		app.$destroy();
 	}
@@ -114,7 +114,7 @@
 		</SwiperSlide>
 		<SwiperSlide class="slide_with_title">
 			<div class="slide_container">
-				<div class="title_space"><p>History</p></div>
+				<div class="title_space"><p>역사의 순간들</p></div>
 				<Swiper id="photo_album" name="photo_album" class="mySwiper2 swiper-v" preloadImages="{true}" lazy="{true}" speed="{2000}" slidesPerView="{3}" spaceBetween="{-6}" pagination='{pagination}' autoplay='{{
 					  "delay": 3000,
 					  "disableOnInteraction": false
@@ -173,6 +173,15 @@
 							<img src="img/album/30.jpg" alt="" class="swiper-lazy">
 						</div>
 					</SwiperSlide>
+					<SwiperSlide>
+						<div class="image-grid">
+							<img src="img/album/31.jpg" alt="" class="swiper-lazy">
+							<img src="img/album/32.jpg" alt="" class="swiper-lazy">
+							<img src="img/album/33.jpg" alt="" class="swiper-lazy">
+							<img src="img/album/34.jpg" alt="" class="swiper-lazy">
+							<img src="img/album/35.jpg" alt="" class="swiper-lazy">
+						</div>
+					</SwiperSlide>
 				</Swiper>
 			</div>
 		</SwiperSlide>
@@ -180,10 +189,17 @@
 			<div class="slide_container">
 				<div class="title_space"><p>오시는 길</p></div>
 				<img class="map_img" src="img/map.png" />
-				<!-- <p>주소: {name}</p>
-				<input bind:value={name}>
-				<button class="btn btn-primary" on:click={copy}>주소복사하기</button>
-				<div id="clipboard"></div> -->
+				<div class="way_to_go">
+					<div><a href="https://map.daum.net/link/to/더베네치아, 37.515372444570936, 127.10297789145619" style="color:blue" target="_blank"><button class="btn btn-warning">카카오지도</button></a></div>
+					<div><a href="http://map.naver.com/index.nhn?elng=127.10297789145619&elat=37.515372444570936&etext=더베네치아&menu=route&pathType=1">
+						<button class="btn btn-success">네이버지도</button>
+					</a></div>
+					<div>
+						<input bind:value={address}>
+						<button class="btn btn-primary" on:click={copy}>주소복사하기</button>
+						<div id="clipboard"></div>
+					</div>
+				</div>
 			</div>
 		</SwiperSlide>
 		<SwiperSlide id="contact" class="slide_with_title">
@@ -191,25 +207,43 @@
 				<div class="title_space"><p>마음 전하실 곳</p></div>
 				<div class="grid-container">
 					<div class='grid-item'>
-						<p class="sorry">코로나로 힘든 시기에 결혼식을</p>
-						<p class="sorry">올리게 되어 죄송스럽습니다.</p>
-						<p id="sorry_newline" class="sorry">혹시 참석하지 못하시더라도</p>
-						<p class="sorry">축복해 주시면 감사하겠습니다.</p>
+						<div class="rows"><p class="sorry">코로나로 힘든 시기에 결혼식을</p></div>
+						<div class="rows"><p class="sorry">올리게 되어 죄송스럽습니다.</p></div>
+						<div class="rows"><p id="sorry_newline" class="sorry">혹시 참석하지 못하시더라도</p></div>
+						<div class="rows"><p class="sorry">축복해 주시면 감사하겠습니다.</p></div>
 					</div>
 					<div class='grid-item'>
-						<h1>신랑</h1>
-						<p>김성진</p>
-						<p>KB 91028884504</p>
-						<a href='https://qr.kakaopay.com/281006011171148890009784'><img class='kakaopay' src='img/카카오페이_CI_combination_with_BG.svg' /></a>
+						<div id="cross_border1"></div>
+						<div class="rows"><h1>신랑</h1></div>
+						<div class="rows"><p class="name">김성진</p></div>
+						<div class="rows"><p class="bank">KB 91028884504</p></div>
+						<div class="rows"><a href='https://qr.kakaopay.com/281006011171148890009784'><img class='kakaopay' src='img/카카오페이_CI_combination_with_BG.svg' /></a></div>
 					</div>
 					<div class='grid-item'>
-						<h1>신부</h1>
-						<p>김유림</p>
-						<p>SC제일 38520100690</p>
-						<a href='https://qr.kakaopay.com/281006011000071963774752'><img class='kakaopay' src='img/카카오페이_CI_combination_with_BG.svg' /></a>
+						<div id="cross_border2"></div>
+						<div class="rows"><h1>신부</h1></div>
+						<div class="rows"><p class="name">김유림</p></div>
+						<div class="rows"><p class="bank">SC제일 38520100690</p></div>
+						<div class="rows"><a href='https://qr.kakaopay.com/281006011000071963774752'><img class='kakaopay' src='img/카카오페이_CI_combination_with_BG.svg' /></a></div>
 					</div>
-					<div class='grid-item'><a href='tel:01073003086'><img class='phone' src='img/phone.jpg'/></a></div>
-					<div class='grid-item'><a href='tel:01073003086'><img class='phone' src='img/phone.jpg'/></a></div>
+					<div class='grid-item'>
+						<!-- <a href='tel:01073003086'><img class='phone' src='img/phone.jpg'/></a> -->
+						<div id="cross_border3"></div>
+						<div class="rows"><h1>신랑측 혼주</h1></div>
+						<div class="rows"><p class="name">김종훈</p></div>
+						<div class="rows"><p class="bank">농협 725064-52-008793</p></div>
+						<div class="rows"><p class="name">최명순</p></div>
+						<div class="rows"><p class="bank">대구은행 078-10-000262</p></div>
+					</div>
+					<div class='grid-item'>
+						<!-- <a href='tel:01073003086'><img class='phone' src='img/phone.jpg'/></a> -->
+						<div id="cross_border4"></div>
+						<div class="rows"><h1>신부측 혼주</h1></div>
+						<div class="rows"><p class="name">김용수</p></div>
+						<div class="rows"><p class="bank">SC제일 38520100690</p></div>
+						<div class="rows"><p>(김유림)</p></div>
+						<div class="rows"><p class="bank">&nbsp;</p></div>
+					</div>
 				</div>
 			</div>
 		</SwiperSlide>

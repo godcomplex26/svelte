@@ -146,24 +146,21 @@ button:focus {
 
 /* 첫페이지 시작 */
 #photo_1 {
-	background-image: url('img/album/15.jpg');
+	background-image: url('img/album/main/1.jpg');
   background-position: center;
   background-size: cover;
-  filter: grayscale(100%);
 }
 
 #photo_2 {
-	background-image: url('img/album/11.jpg');
+	background-image: url('img/album/main/2.jpg');
   background-position: center;
   background-size: cover;
-  filter: grayscale(100%);
 }
 
 #photo_3 {
-	background-image: url('img/album/20.jpg');
+	background-image: url('img/album/main/3.jpg');
   background-position: center;
   background-size: cover;
-  filter: grayscale(100%);
 }
 
 #phrases {
@@ -324,34 +321,117 @@ button:focus {
 
 .map_img {
 	width: 100%;
-	height: calc(100% - 60px);
+	height: calc(100% - 120px);
 	object-fit: fill;
 }
 
+.way_to_go {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	height: 60px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.way_to_go div {
+	margin: auto;
+}
 
 /* page5. 축의금, 연락처 페이지 */
 /* page5. 그리드 뷰 레이아웃 */
 .grid-container {
+	--row-height: calc((80vh - 63px) / 2);
+
+	box-sizing: border-box;
+
+	display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 20vh var(--row-height) var(--row-height);
+ 	/*background-color: darkorange;*/
+ 	font-size: 2.8vh;
+}
+
+.grid-item {
 	width: 100%;
 	height: 100%;
-  display: grid;
-  grid-template-columns: 49% 49%;
-  grid-template-rows: 40% 30% 30% 30% 30%;
-  grid-gap: 1px;
- 	background-color: darkorange;
-}
-.grid-item {
-	background-position: center;
+	position: relative;
+	display: table;
+	/*padding-top: 3vh;*/
+	/*background-position: center;*/
   text-align: center;
-  align-items: center;
-  transition: all 0.5s ease-in;
+  /*transition: all 0.5s ease-in;*/
   font-family: 'MN';
-  background-color: white;
-  border: 1px solid #000;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}
+
+.rows {
+	display: table-row;
+}
+
+.rows p, h1, a {
+	display: table-cell;
+	vertical-align: middle;
+	margin: 0 auto;
+	line-height: auto;
+}
+
+.rows h1 {
+	/*font-size: 1.4em;*/
 }
 
 .grid-item:nth-child(1) {
+	padding-top: 20px;
+	padding-bottom: 20px;
 	grid-column: 1 / span 2;
+}
+
+#cross_border1 {
+	z-index: -1;
+	position: absolute;
+	width: 85%;
+	height: 85%;
+	bottom: 0;
+	right: 0;
+	border-right: 1px solid rgba(255, 212, 0, 1);
+	border-bottom: 1px solid rgba(255, 212, 0, 1);
+}
+
+#cross_border2 {
+	z-index: -1;
+	position: absolute;
+	width: 85%;
+	height: 85%;
+	bottom: 0;
+	left: 0;
+	border-left: 1px solid rgba(255, 212, 0, 1);
+	border-bottom: 1px solid rgba(255, 212, 0, 1);
+}
+
+#cross_border3 {
+	z-index: -1;
+	position: absolute;
+	width: 85%;
+	height: 85%;
+	top: 0;
+	right: 0;
+	border-right: 1px solid rgba(255, 212, 0, 1);
+	border-top: 1px solid rgba(255, 212, 0, 1);
+}
+
+#cross_border4 {
+	z-index: -1;
+	position: absolute;
+	width: 85%;
+	height: 85%;
+	top: 0;
+	left: 0;
+	border-left: 1px solid rgba(255, 212, 0, 1);
+	border-top: 1px solid rgba(255, 212, 0, 1);
 }
 
 /* page5. 아이콘 등 */
@@ -369,4 +449,17 @@ button:focus {
 .phone {
 	width: 33px;
 	height: 33px;
+}
+
+.bank {
+	font-size: 0.7em;
+	vertical-align: top!important;
+}
+
+.name {
+	vertical-align: bottom!important;
+}
+
+.sorry {
+	height: 18%;
 }
