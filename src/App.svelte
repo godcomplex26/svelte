@@ -209,7 +209,7 @@
 							<img src="img/album/31.png" alt="" class="swiper-lazy">
 							<img src="img/album/32.png" alt="" class="swiper-lazy">
 							<img src="img/album/33.png" alt="" class="swiper-lazy">
-							<img src="img/album/34.png" alt="" class="swiper-lazy">
+							<img src="img/album/34.jpg" alt="" class="swiper-lazy">
 							<img src="img/album/35.png" alt="" class="swiper-lazy">
 						</div>
 					</SwiperSlide>
